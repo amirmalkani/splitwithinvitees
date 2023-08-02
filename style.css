@@ -1,0 +1,95 @@
+.flex {
+  display: flex;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.b-grey {
+  background-color: #f2f2f2;
+}
+
+.b-blue {
+  background-color: #5c74f0;
+}
+
+/* .w-80{
+  width: 80vw;
+  margin: auto;
+} */
+
+.b-50p {
+  border-radius: 50%;
+  height: 79px;
+  width: 79px;
+  padding: 15px;
+}
+
+.minh-312{
+  min-height: 312px;
+}
+
+.equal{
+    flex: 1 1 0;
+    width: 0;
+}
+
+.w-80{
+  width: 80%;
+}
+
+.flexwrapper{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hover:hover{
+  box-shadow: 0 0.5rem 1rem rgb(216, 215, 215);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .responsive{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .w-maxx{
+    width: max-content;
+  }
+
+  .w-1{
+    width: 100%;
+  }
+}
+
+#styling{
+  border: 2px solid red;
+}
+
+.h-20vw{
+  max-height: 20vw;
+  overflow:auto;
+} 
+
+.toast-header{
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background-color: white;
+}

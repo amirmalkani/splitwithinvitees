@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US" class="hide-scroll">
+
+<head>
+    <title>What Is Going To Happen Website Design Live Demo</title>
+    <meta name="Keywords">
+    <meta name="Description">
+
+
+
+
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width">
+    <link href="//fonts.googleapis.com/css?family=Roboto|Open+Sans:200,300,400,700,800,900&amp;subset=latin"
+        rel="preload" as="font" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <script src="//capp.nicepage.com/91ebab354796d476100a0fbf1b762fc8d6d7c384/main-libs.js"></script>
+    <link href="//capp.nicepage.com/91ebab354796d476100a0fbf1b762fc8d6d7c384/main-libs.css" rel="stylesheet" />
+    <meta name="robots" content="noindex, nofollow">
+    <script type="text/javascript">
+        var device = 'desktop';
+        function init($) {
+            $('#previewDesktopBtn').click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+
+            $('#previewLaptopBtn').click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+            $('#previewTabletBtn').click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+            $('#previewPhoneHorizontalBtn').click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+            $('#previewPhoneBtn').click(function (e) {
+                setLivePreviewFrameSize($(this));
+                setActiveResponsiveButton(this);
+                e.preventDefault();
+            });
+
+            detectActiveResponsiveButton();
+        }
+
+        if (jQuery.isReady) {
+            init(jQuery);
+        } else {
+            jQuery(function ($) {
+                init($);
+            });
+        }
+
+        function setActiveResponsiveButton(btn) {
+            $(".page-preview-header > a").removeClass("active");
+            $(btn).addClass("active");
+        }
+
+        function detectActiveResponsiveButton() {
+            var d = device;
+            if (!d) {
+                d = 'desktop';
+            }
+            $("#preview" + d.charAt(0).toUpperCase() + d.substr(1) + "Btn").click();
+        }
+
+        function getDataPreviewSizeAttr(el) {
+            return el.closest("[data-preview-size]").attr("data-preview-size");
+        }
+
+        function setLivePreviewFrameSize(srcEl) {
+            var getScrollbarWidth = function () {
+                var s = $('<div style="width:100px;height:100px;overflow:scroll;visibility:hidden;position:absolute;top:-99999px"><div style="height:200px;"></div></div>')
+                    .appendTo("body");
+                var res = s.width() - s.find("div").last().width();
+                s.remove();
+                return res;
+            };
+            var attr = getDataPreviewSizeAttr(srcEl);
+            $('#livePreviewFrame').width(attr.indexOf("%") !== -1 ? attr : parseInt(attr, 10) + getScrollbarWidth());
+        }
+
+    </script>
+    <style>
+        .dialog-wrapper {
+            display: none !important;
+        }
+
+        .wrap,
+        #main {
+            height: 100vh;
+            margin: 0 !important;
+        }
+
+        iframe {
+            display: none;
+        }
+
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .page-preview {
+            border-radius: 0;
+            height: 100%;
+        }
+
+        .page-preview-header {
+            background: #f2f2f2;
+            border: none;
+            height: 70px;
+            position: relative;
+            text-align: center;
+        }
+
+        .page-preview-header>a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 4px;
+        }
+
+        .page-preview-header>a:hover {
+            background: #e2f0fc;
+            text-decoration: none;
+        }
+
+        .page-preview-header>a.active {
+            background: #c9e4f9;
+        }
+
+        .page-preview-header>.close {
+            float: right;
+            margin-right: 10px;
+        }
+
+        .page-preview-body {
+            height: calc(100% - 70px);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .page-preview-body iframe {
+            border: none;
+            display: inline-block;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Split with Amir</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="suggestion.html">Suggestion</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="contact.html">Contact Amir</a></li>
+                            <!-- <li>
+                                    <hr class="dropdown-divider">
+                                </li> -->
+                            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li> -->
+                </ul>
+                <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+            </div>
+        </div>
+    </nav>
+    <div class="page-preview">
+            
+        <div class="page-preview-body">
+            <iframe id="livePreviewFrame"
+                src="https://website4015633.nicepage.io/Page-11.html?version=c9052a2d-8aea-4da6-81fc-7d7a4e86019d"
+                width="1057" height="640" style="width:100%;"></iframe>
+        </div>
+    </div>
+    <!-- <a style="position:absolute;top:17px;left:10px;" href="/"><img alt="NicePage.com"
+            src="//csite.nicepage.com/Images/logo-w.png"></a> -->
+
+    <script>
+        if (window.parent) {
+            var _w = 0, _h = 0;
+            var updateFormSize = function () {
+                var form = $('form.shaped-form-extended,form.shaped-form');
+                var w = form.outerWidth(true);
+                var h = form.outerHeight(true);
+                if (Math.abs(_w - w) > 5 || Math.abs(_h - h) > 5) {
+                    _w = w;
+                    _h = h;
+                    var msg = { key: 'login-frame-size', width: w, height: h };
+                    window.parent.postMessage(msg, "*");
+                }
+                setTimeout(updateFormSize, 300);
+            }
+            updateFormSize();
+        }
+    </script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
